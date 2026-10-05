@@ -1,48 +1,48 @@
-# 镜都 Mirroria 3D
+# Mirroria 3D
 
-基于 [three.js](https://threejs.org/)（r186）的镜都 Mirroria 交互式 3D 模型。整个项目只有一个 HTML 文件，模型全部由代码程序化生成，不依赖任何外部资源，用浏览器打开即可运行。
+An interactive 3D model of Mirroria, built with [three.js](https://threejs.org/) (r186). The whole project is a single self-contained HTML file: every model is generated procedurally in code, and nothing is loaded from external sources.
 
-当前版本：**v4.1**
+Current version: **v4.1**
 
-![截图](docs/screenshot.png)
+![Mirroria 3D screenshot](docs/screenshot.webp)
 
-## 运行方式
+## Getting started
 
-- **本地**：下载 `index.html`，双击用浏览器（Chrome / Edge / Firefox 等）打开。
-- **Logo（可选）**：把官方 logo 图片命名为 `logo.png`，放在 `index.html` 同一文件夹，左上角会自动显示。仓库中不包含该图片。
+- Download `index.html` and open it in a modern browser (Chrome, Edge, Firefox, etc.). No server or build step is needed.
+- The browser must support WebGL. The High and Ultra quality presets enable extra post-processing and need a stronger GPU.
+- The interface is in Simplified Chinese.
+- **Logo (optional):** save the official logo as `logo.png` in the same folder as `index.html` and it will appear in the top-left corner. The logo is not included in this repository.
 
-需要浏览器支持 WebGL。画质选「高」或「极致」时会开启更多后期效果，对显卡要求更高。
+## Features
 
-## 功能
+- **Landmark guide:** 25 landmarks in five groups: Exterior · Mirror Pyramid, District A · Core, District B · Mirramoon & Gardens, District C · Entertainment & Residential, and Vera Desert. Selecting a landmark flies the camera to it and opens its info card.
+- **Time of day:** day, dusk sandstorm, night
+- **Shell:** full, see-through, cutaway
+- **Camera presets:** overview, top-down, from below, inside the city, desert vista, apex close-up
+- **Exploded layers**, **auto-rotate**, and **interior view lock**
+- **Quality presets:** Smooth (2K shadows), High (4K shadows, ambient occlusion, sun rays, glass lattice shadows), Ultra (8K soft shadows, high-sample ambient occlusion, supersampling)
+- **Export:** screenshot, 4K screenshot, GLB model
 
-- **地标导览**：25 个地标，分为五组：外观 · 镜面金字塔、A 区 · 中枢、B 区 · 镜月与园林、C 区 · 娱乐与居住、维拉沙漠。点击后飞到对应地标并显示介绍卡。
-- **时间**：白昼 / 黄昏沙暴 / 夜晚
-- **外壳**：完整 / 透视 / 剖切
-- **视角预设**：全景、俯瞰、城底仰视、进入城内、沙漠远眺、塔尖特写
-- **分层展开**、**自动旋转**、**锁定城内视角**
-- **画质三档**：流畅（2K 阴影）/ 高（4K 阴影、环境光遮蔽、太阳光束）/ 极致（8K 柔和阴影、超采样）
-- **导出**：截图、4K 截图、导出 GLB 模型
+## Controls
 
-## 操作说明
-
-| 操作 | 作用 |
+| Input | Action |
 | --- | --- |
-| 左键拖动 / 单指 | 360° 旋转 |
-| 右键拖动 / 双指 | 平移 |
-| 滚轮 / 双指捏合 | 缩放（朝光标方向，可一路放大到街道细节） |
-| 双击模型 | 把旋转中心移到该点 |
-| 点击标签或左侧列表 | 飞到地标并显示介绍 |
-| W A S D / 方向键 | 沿视线前进后退、左右平移 |
-| Q / E · 按住 Shift | 下降 / 上升 · 加速移动 |
-| R / 空格 | 回到全景 / 自动旋转 |
-| 1 2 3 | 白昼 / 黄昏沙暴 / 夜晚 |
-| I | 锁定 / 解除城内视角 |
-| C / F | 剖切外壳 / 分层展开 |
-| Z / X | 隐藏或显示左侧导览 / 右侧面板 |
-| L | 隐藏或显示地标标签 |
-| H | 沉浸模式：一键隐藏全部界面，再按恢复 |
+| Left-drag / one finger | Orbit 360° |
+| Right-drag / two fingers | Pan |
+| Scroll wheel / pinch | Zoom toward the cursor, down to street-level detail |
+| Double-click the model | Move the orbit center to that point |
+| Click a label or list entry | Fly to the landmark and show its info card |
+| W A S D / arrow keys | Move forward and back along the view direction, strafe left and right |
+| Q / E · hold Shift | Descend / ascend · move faster |
+| R / Space | Return to overview / toggle auto-rotate |
+| 1 2 3 | Day / dusk sandstorm / night |
+| I | Lock or unlock the interior view; while locked, zooming, moving and double-clicking never leave the mirror shell |
+| C / F | Cutaway shell / exploded layers |
+| Z / X | Show or hide the landmark guide (left) / control panel (right) |
+| L | Show or hide landmark labels |
+| H | Immersive mode: hide all UI, press again to restore |
 
-## 说明
+## Notes
 
-- 模型依据官方发布的截图、游戏内地图与版本公告还原外形与布局；未公开细节的部分为风格化推断，介绍卡中会标明「含推断」。
-- `index.html` 是打包后的产物：three.js 与项目代码已合并压缩在同一个 `<script>` 中。
+- The exterior and layout are reconstructed from officially released screenshots, the in-game map and version announcements. Details that have not been published are stylized guesses, and their info cards mark them as inferred.
+- `index.html` is a build output: three.js and the project code are bundled and minified into a single inline `<script>`.

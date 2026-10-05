@@ -1,13 +1,13 @@
-# 系统文件
+# OS files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# 编辑器
+# Editors
 .vscode/
 .idea/
 *.swp
 
-# 本地导出（截图 / GLB）
+# Local exports (screenshots / GLB)
 *.glb
 Mirroria-*.png
